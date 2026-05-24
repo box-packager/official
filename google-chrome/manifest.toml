@@ -1,0 +1,45 @@
+#:schema ../manifest.schema.json
+
+[package]
+name = "Google Chrome"
+description = "A fast, secure, and free web browser built for the modern web."
+icon = "icon.png"
+license = "https://www.google.com/chrome/terms/"
+images = [
+    "https://www.google.com/chrome/static/videos/dev-components/non-chrome.webm",
+    "https://www.google.com/chrome/static/images/gen-ai/ai-innovation/glitter/gemini-in-chrome_desktop.webp",
+    "https://www.google.com/chrome/static/videos/march-moment-2026/ai-mode/Homepage-AIMode-demo_desktop.webm"
+]
+
+[repository.apt]
+format = "deb822"
+signing_key = "https://dl.google.com/linux/linux_signing_key.pub"
+
+[[repository.apt.source]]
+types = "deb"
+uris = ["https://dl.google.com/linux/chrome/deb/"]
+suites = ["stable"]
+components = ["main"]
+arch = ["amd64"]
+
+[channel.stable]
+name = "Stable"
+recommended = true
+
+source.aur = { package = "google-chrome" }
+source.apt = { package = "google-chrome-stable" }
+
+[channel.beta]
+name = "Beta"
+source.aur = { package = "google-chrome-beta" }
+source.apt = { package = "google-chrome-beta" }
+
+[channel.dev]
+name = "Development"
+source.aur = { package = "google-chrome-dev" }
+source.apt = { package = "google-chrome-unstable" }
+
+[channel.canary]
+name = "Canary"
+source.aur = { package = "google-chrome-canary" }
+source.apt = { package = "google-chrome-canary" }
