@@ -16,9 +16,9 @@ format = "deb822"
 signing_key = "https://dl.google.com/linux/linux_signing_key.pub"
 
 [[repository.apt.source]]
-types = "deb"
-uris = ["https://dl.google.com/linux/chrome/deb/"]
-suites = ["stable"]
+types = ["deb"]
+uris = "https://dl.google.com/linux/chrome/deb/"
+suites = "stable"
 components = ["main"]
 arch = ["amd64"]
 

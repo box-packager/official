@@ -1,0 +1,14 @@
+#:schema ../manifest.schema.json
+
+[package]
+name = "Git"
+description = "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency."
+icon = "icon.png"
+license = "GPL-2.0"
+
+[channel.stable]
+name = "Stable"
+recommended = true
+
+source.aur = { package = "git" }
+source.apt = { package = "git" }
